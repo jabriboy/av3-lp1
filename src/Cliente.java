@@ -13,10 +13,11 @@ public class Cliente {
 
     public void addPets(String nome, String raca, int idade){
         pets.add(new Pet(nome, raca, idade));
-
     }
 
     public void removePet(String nome, String raca){
-        pets.forEach(n -> { if(n.nome == nome); });
+        pets.forEach(n -> { if(n.nome == nome && n.raca == raca) pets.remove(n); });
     }
+
+    
 }
