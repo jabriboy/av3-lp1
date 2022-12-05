@@ -14,9 +14,9 @@ public class Servicos {
         this.tempo = tempo;
     }
 
-    public void addAgenda(Cliente cliente, Pet pet, Funcionario func, String data){
+    public void addAgenda(Cliente cliente, Funcionario func, String data){
         int id = agenda.size();
-        agenda.add(new Agenda(id, cliente, pet, func, data));
+        agenda.add(new Agenda(id, cliente, func, data));
         func.comicao += (this.valor * .2);
     }
 

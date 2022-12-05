@@ -7,10 +7,9 @@ public class Agenda {
 
     public Agenda(){}
 
-    public Agenda(int id, Cliente cliente, Pet pet, Funcionario func, String data){
+    public Agenda(int id, Cliente cliente, Funcionario func, String data){
         this.id = id;
         this.cliente = cliente;
-        this.pet = pet;
         this.func = func;
         this.data = data;
     }

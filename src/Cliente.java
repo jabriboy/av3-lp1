@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Cliente {
     String nome;
-    int id;
     ArrayList<Pet> pets = new ArrayList<>();
 
     public Cliente(){}

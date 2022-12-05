@@ -1,20 +1,22 @@
-import java.util.ArrayList;
-
 public class Venda {
     Cliente cliente;
     Estoque estoque;
-    ArrayList<int[]> produtos = new ArrayList<>(2);
     String data;
     float valor;
     
     public Venda(){}
 
-    public Venda(Cliente cliente, ArrayList<int[]> produtos, String data){
+    public Venda(Cliente cliente, String data, Estoque estoque){
         this.cliente = cliente;
-        this.produtos = produtos;
+        this.estoque = estoque;
         this.data = data;
-        for(int i = 0; i < produtos.size(); i++){
-            System.out.println(produtos.get(i));
+        this.valor = 0;
+    }
+
+    public void addProduto(Produto produto, int qntd){
+        if(estoque.produtos.get(estoque.produtos.indexOf(produto)).qntd >= qntd){
+            estoque.produtos.get(estoque.produtos.indexOf(produto)).qntd -= qntd;
+            this.valor += estoque.produtos.get(estoque.produtos.indexOf(produto)).valor * qntd;
         }
     }
 

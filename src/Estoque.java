@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 
 public class Estoque {
-    ArrayList<int[]> produtos = new ArrayList<>(2);
-    ArrayList<Produto> prod = new ArrayList<>();
+    ArrayList<Produto> produtos = new ArrayList<>();
 
     public Estoque(){}
 
     public void addProduto(Produto produto, int qntd){
-        int vetor[] = new int[2];
-        vetor[0] = produto.id;
-        vetor[1] = qntd;
-        produtos.forEach(n -> {if (n[0] == produto.id) n[1] += qntd; else produtos.add(vetor); });
-        if(!prod.contains(produto)){
-            prod.add(produto);
+        if(produtos.contains(produto)){
+            produtos.get(produtos.indexOf(produto)).qntd += qntd;
         }
+        else{
+            produto.qntd = qntd;
+            produtos.add(produto);
+        }
+    }
+
+    public void showEstoque(){
+        produtos.forEach(n -> {System.out.println(n.desc+" - "+n.qntd+"\n");});
     }
 }

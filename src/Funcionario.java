@@ -1,15 +1,14 @@
 public class Funcionario {
-    int id;
     String nome;
     float salario;
     float comicao = 0;
 
     public Funcionario(){}
 
-    public Funcionario(int id, String nome, float salario){
-        this.id = id;
+    public Funcionario(String nome, float salario){
         this.nome = nome;
         this.salario = salario;
     }
 
+    
 }
