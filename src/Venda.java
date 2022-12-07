@@ -1,13 +1,13 @@
 public class Venda {
-    Cliente cliente;
+    Cliente pessoa;
     Estoque estoque;
     String data;
     float valor;
     
     public Venda(){}
 
-    public Venda(Cliente cliente, String data, Estoque estoque){
-        this.cliente = cliente;
+    public Venda(Cliente pessoa, String data, Estoque estoque){
+        this.pessoa = pessoa;
         this.estoque = estoque;
         this.data = data;
         this.valor = 0;
@@ -17,6 +17,9 @@ public class Venda {
         if(estoque.produtos.get(estoque.produtos.indexOf(produto)).qntd >= qntd){
             estoque.produtos.get(estoque.produtos.indexOf(produto)).qntd -= qntd;
             this.valor += estoque.produtos.get(estoque.produtos.indexOf(produto)).valor * qntd;
+        }
+        else{
+            System.out.println("Sem estoque suficiente do produto: "+produto.desc);
         }
     }
 
