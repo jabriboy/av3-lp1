@@ -16,6 +16,11 @@ public class Estoque {
     }
 
     public void showEstoque(){
-        produtos.forEach(n -> {System.out.println(n.desc+" - "+n.qntd+"\n");});
+        try{
+            produtos.forEach(n -> {System.out.println(n.desc+" - "+n.qntd+"\n");});
+        }
+        catch (Exception e) {
+            System.err.println("Erro: "+e.getMessage());
+        }
     }
 }

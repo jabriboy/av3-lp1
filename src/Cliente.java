@@ -15,7 +15,12 @@ public class Cliente {
     }
 
     public void removePet(String nome, String raca){
-        pets.forEach(n -> { if(n.nome == nome && n.raca == raca) pets.remove(n); });
+        try{
+            pets.forEach(n -> { if(n.nome == nome && n.raca == raca) pets.remove(n); });
+        }
+        catch (Exception e){
+            System.err.println("Erro: "+e.getMessage());
+        }
     }
 
     

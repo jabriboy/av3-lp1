@@ -16,8 +16,13 @@ public class Servicos {
 
     public void addAgenda(Cliente cliente, Funcionario func, String data){
         int id = agenda.size();
-        agenda.add(new Agenda(id, cliente, func, data));
-        func.comicao += (this.valor * .2);
+        try{
+            agenda.add(new Agenda(id, cliente, func, data));
+            func.comicao += (this.valor * .2);
+        }
+        catch (Exception e){
+            System.err.println("Erro: "+e.getMessage());
+        }
     }
 
     public void removeAgenda(int id){
